@@ -1,0 +1,308 @@
+---
+title: "Honors Project"
+output: html_document
+date: "2025-04-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+library(ISLR)
+library(tidyverse)
+library(infer)
+library(knitr)
+library(broom)
+library(dplyr)
+library(ggplot2)
+library(readr)
+```
+
+```{r}
+earthquakes <- read_csv("Downloads/earthquakes.csv")
+eq <- earthquakes[, -c(3,4,6,7,8,9,14,16,17,18,19,21,20,26,27,31,33,37:43)]
+```
+
+```{r}
+glimpse(eq) 
+```
+
+```{r}
+ggplot(data = eq, aes(x = depth, y = magnitude)) + geom_point(color = 'steelblue', alpha = 0.75, size = 2.5) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + labs(title = "Depth vs Magnitude", x = "Depth (km)", y = "Magnitude")
+
+eq %>%
+summarise(correlation = cor(magnitude, depth))
+```
+
+```{r}
+ggplot(data = eq, aes(x = depth, y = magnitude)) + geom_point(color = 'steelblue', alpha = 0.75, size = 2.5) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + scale_x_log10() + labs(title = "Depth (log scale) vs Magnitude", x = "Depth (km)", y = "Magnitude")
+
+eq %>%
+  filter(depth > 0) %>%
+  summarise(correlation = cor(magnitude, log10(depth)))
+```
+
+
+```{r}
+ggplot(data = eq, aes(x = felt, y = magnitude)) + geom_point(color = 'steelblue', alpha = 0.75, size = 2.5) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + labs(title = "Amount of People Who Felt Earthquake vs Magnitude", x = "People", y = "Magnitude")
+
+eq %>%
+summarise(correlation = cor(magnitude, felt))
+```
+
+```{r}
+ggplot(data = eq, aes(x = felt, y = magnitude)) + geom_point(color = 'steelblue', alpha = 0.75, size = 2.5) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted'))  + scale_x_log10() + labs(title = "Amount of People Who Felt Earthquake (log scale) vs Magnitude", x = "People", y = "Magnitude")
+
+eq %>%
+  filter(felt > 0) %>%
+  summarise(correlation = cor(magnitude, log10(felt)))
+```
+
+
+```{r}
+ggplot(data = eq, aes(x = latitude, y = magnitude)) + geom_point(color = 'steelblue', alpha = 0.75, size = 2.5) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + labs(title = "Latitude vs Magnitude", x = "Latitude", y = "Magnitude")
+
+eq %>%
+summarise(correlation = cor(magnitude, latitude))
+```
+
+```{r}
+ggplot(data = eq, aes(x = longitude, y = magnitude)) + geom_point(color = 'steelblue', alpha = 0.75, size = 2.5) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + labs(title = "Longitude vs Magnitude", x = "Longitude", y = "Magnitude")
+
+eq %>%
+summarise(correlation = cor(magnitude, longitude))
+```
+
+```{r}
+ggplot(data = eq, aes(x = longitude, y = latitude)) + geom_point(color = 'steelblue', alpha = 0.75, size = 2.5) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + labs(title = "Longitude vs Latitude", x = "Longitude", y = "Latitude") + xlim(c(-180,180)) + ylim(c(-90,90))
+```
+
+```{r}
+ggplot(data = eq, aes(x = longitude, y = latitude, color = magnitude)) + geom_point(alpha = 0.75, size = 1.5) + scale_color_gradient(low = "green", high = "red") + theme(panel.background = element_rect(fill = 'azure2', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + labs(title = "Longitude vs Latitude by Magnitude", x = "Longitude", y = "Latitude") + xlim(c(-180,180)) + ylim(c(-90,90))
+```
+
+```{r}
+eq_continents <- eq %>%
+  filter(continent %in% c("North America", "South America","Europe", "Asia", "Africa", "Oceania", "Insular Oceania"))
+  
+  
+ggplot(data = eq_continents, aes(x = continent, y = magnitude, fill = continent)) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + geom_boxplot() + labs(title = "Earthquake Magnitude by Continent", x = "Continent", y = "Magnitude")
+```
+
+```{r}
+eq$continent <- as.factor(eq$continent)
+
+magnitude_model <- lm(magnitude ~ depth + felt + longitude + latitude + continent, data = eq)
+
+tidy(magnitude_model)
+
+glance(magnitude_model) %>%
+  select('r.squared', 'adj.r.squared')
+```
+
+```{r}
+best_magnitude_model <- step(object = magnitude_model, direction = "backward", trace = FALSE)
+tidy(best_magnitude_model)
+
+best_magnitude_model %>%
+  glance() %>%
+  select(r.squared, adj.r.squared)
+```
+
+
+```{r}
+eq$tsunami <- as.factor(eq$tsunami)
+
+ggplot(data = eq, aes(x = tsunami, y = magnitude, fill = tsunami)) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + geom_boxplot() + scale_fill_manual(values = c("0" = "lightblue", "1" = "brown3"), labels = c("No Tsunami Warning", "Tsunami Warning")) + labs(title = "Magnitude by Tsunami Warning", x = "Tsunami", y = "Magnitude")
+
+eq %>%
+summarise('No Tsunami Magnitude' = mean(magnitude[tsunami == 0]),
+          'Tsunami Magnitude' = mean(magnitude[tsunami ==1]))
+```
+
+```{r}
+eq$alert <- as.factor(eq$alert)
+eq_alert <- eq %>% 
+  filter(!is.na(alert))
+ 
+eq_alert %>%
+  count(alert)
+
+ggplot(data = eq_alert, aes(x = alert, y = magnitude, fill = alert)) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + geom_boxplot() + scale_fill_manual(values = c('green', 'orange', 'yellow', 'red')) + labs(title = "Earthquake Magnitude by Alert Level", x = "Alert", y = "Magnitude")
+
+eq_alert %>%
+summarise('Green Alert Magnitude' = mean(magnitude[alert == "green"]),
+          'Yellow Alert Magnitude' = mean(magnitude[alert == "yellow"]),
+          'Orange Alert Magnitude' = mean(magnitude[alert == "orange"]),
+          'Red Alert Magnitude' = mean(magnitude[alert == "red"]))
+```
+
+```{r}
+ggplot(data = eq, aes(x = magnitude, y = mmi)) + geom_jitter(color = 'steelblue', alpha = 0.75, size = 2.5, height = 0.5) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + labs(title = "Magnitude vs MMI", x = "Magnitude (km)", y = "MMI") + geom_smooth(method = "lm", color = 'red')
+
+eq %>%
+summarise(correlation = cor(magnitude, mmi))
+```
+
+```{r}
+ggplot(data = eq, aes(x = magnitude, y = rms)) + geom_jitter(color = 'steelblue', alpha = 0.75, size = 2.5) + theme(panel.background = element_rect(fill = 'ghostwhite', color = 'black'), panel.grid.major = element_line(color = 'gray', linetype = 'dotted')) + labs(title = "Magnitude vs RMSe", x = "Magnitude", y = "RMS") + geom_smooth(method = "lm", color = 'red')
+
+eq %>%
+summarise(correlation = cor(magnitude, rms))
+```
+
+```{r}
+updated_magnitude_model <- lm(magnitude ~ log10(depth) + felt + longitude + latitude + continent + mmi + rms + tsunami + alert, data = eq)
+
+tidy(updated_magnitude_model)
+
+glance(updated_magnitude_model) %>%
+  select('r.squared', 'adj.r.squared')
+```
+
+```{r}
+final_magnitude_model <- step(object = updated_magnitude_model, direction = "forward", trace = FALSE)
+tidy(final_magnitude_model)
+
+final_magnitude_model %>%
+  glance() %>%
+  select(r.squared, adj.r.squared)
+```
+
+```{r}
+manual_magnitude_model <- lm(magnitude ~ log10(depth) + felt + longitude + latitude + continent + mmi + rms + tsunami, data = eq)
+
+tidy(manual_magnitude_model)
+
+glance(manual_magnitude_model) %>%
+  select('r.squared', 'adj.r.squared')
+```
+
+
+```{r}
+no_tsunami <- eq %>%
+  filter(tsunami == 0)
+
+yes_tsunami <- eq %>%
+  filter(tsunami == 1)
+
+no_avg_magnitude <- mean(no_tsunami$magnitude)
+yes_avg_magnitude <- mean(yes_tsunami$magnitude)
+
+null_dist_tsunami <- yes_tsunami %>% 
+  specify(response = magnitude) %>%    #variable to work with
+  hypothesize(null = "point", mu = no_avg_magnitude) %>%    #set null hypothesis
+  generate(reps = 10000, type = "bootstrap") %>%    #generate samples
+  calculate(stat = "mean")    #compute mean for each sample
+
+null_dist_tsunami %>% 
+ggplot(mapping = aes(x = stat)) + 
+geom_histogram(fill = 'steelblue', color = "black", alpha = 0.75, bins = 30) + 
+labs(x = "Total Magnitude", y = "Count", title = "Null Distribution of Magnitude for Tsunami Warnings", caption = "10000 bootstrap sample means") + geom_vline(aes(xintercept = yes_avg_magnitude), col = 'red', size = 1)
+```
+
+```{r}
+null_dist_tsunami %>% 
+  filter(stat >= yes_avg_magnitude) %>% 
+  summarise(p_value = n() / nrow(null_dist_tsunami))
+```
+```{r}
+eq_north_america <- eq %>%
+  filter(continent == "North America")
+
+eq_south_america <- eq %>%
+  filter(continent == "South America")
+
+eq_africa <- eq %>%
+  filter(continent == "Africa")
+
+eq_europe <- eq %>%
+  filter(continent == "Europe")
+
+eq_asia <- eq %>%
+  filter(continent == "Asia")
+
+eq_oceania <- eq %>%
+  filter(continent %in% c("Oceania", "Insular Oceania"))
+
+na_avg_magnitude <- mean(eq_north_america$magnitude)
+sa_avg_magnitude <- mean(eq_south_america$magnitude)
+africa_avg_magnitude <- mean(eq_africa$magnitude)
+europe_avg_magnitude <- mean(eq_europe$magnitude)
+asia_avg_magnitude <- mean(eq_asia$magnitude)
+oceania_avg_magnitude <- mean(eq_oceania$magnitude)
+```
+
+```{r}
+null_dist_na <- eq_south_america %>% 
+  specify(response = magnitude) %>%
+  hypothesize(null = "point", mu = na_avg_magnitude) %>%
+  generate(reps = 10000, type = "bootstrap") %>%
+  calculate(stat = "mean")
+
+null_dist_africa <- eq_south_america %>% 
+  specify(response = magnitude) %>%
+  hypothesize(null = "point", mu = africa_avg_magnitude) %>%
+  generate(reps = 10000, type = "bootstrap") %>%
+  calculate(stat = "mean")
+
+null_dist_europe <- eq_south_america %>% 
+  specify(response = magnitude) %>%
+  hypothesize(null = "point", mu = europe_avg_magnitude) %>%
+  generate(reps = 10000, type = "bootstrap") %>%
+  calculate(stat = "mean")
+
+null_dist_asia <- eq_south_america %>% 
+  specify(response = magnitude) %>%
+  hypothesize(null = "point", mu = asia_avg_magnitude) %>%
+  generate(reps = 10000, type = "bootstrap") %>%
+  calculate(stat = "mean")
+
+null_dist_oceania <- eq_south_america %>% 
+  specify(response = magnitude) %>%
+  hypothesize(null = "point", mu = oceania_avg_magnitude) %>%
+  generate(reps = 10000, type = "bootstrap") %>%
+  calculate(stat = "mean")
+```
+
+```{r}
+na_filter <- null_dist_na %>% 
+  filter(stat >= sa_avg_magnitude)
+
+africa_filter <- null_dist_africa %>% 
+  filter(stat >= sa_avg_magnitude)
+
+europe_filter <- null_dist_europe %>% 
+  filter(stat >= sa_avg_magnitude)
+
+asia_filter <- null_dist_asia %>% 
+  filter(stat >= sa_avg_magnitude)
+
+oceania_filter <- null_dist_oceania %>% 
+  filter(stat >= sa_avg_magnitude)
+  
+p1 <- (p_value_na = nrow(na_filter) / nrow(null_dist_oceania))
+p2 <- (p_value_na = nrow(africa_filter) / nrow(null_dist_oceania))
+p3 <- (p_value_na = nrow(europe_filter) / nrow(null_dist_oceania))
+p4 <- (p_value_na = nrow(asia_filter) / nrow(null_dist_oceania))
+p5 <- (p_value_na = nrow(oceania_filter) / nrow(null_dist_oceania))
+
+
+continent_p_values <- data.frame(
+  continent = c("North America", "Africa","Europe", "Asia", "Oceania"),
+  p_value = c(p1,p2,p3,p4,p5))
+
+continent_p_values
+```
+
+
+
+
+
