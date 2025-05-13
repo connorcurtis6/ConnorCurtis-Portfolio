@@ -21,6 +21,7 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 
 ### 2. BCG X Gen AI Forage Simulation Work
 - [Data Analysis File](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/BCG%20X.ipynb)
+- [Chatbot Code File](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/app.py)
 - Completed a job simulation involving AI-powered financial chatbot development for BCG's GenAI Consulting team.
 - Gained experience in Python programming, including the use of libraries such as pandas for data manipulation.
 - Integrated and interpreted complex financial data from 10-K and 10-Q reports, employing rule-based logic to create a chatbot that provides user-friendly financial insights and analysis.
