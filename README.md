@@ -16,7 +16,7 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 
 ## Projects
 
-### 1. [Kaggle Deep Learning Certificate](kaggle-deep-learning-cert/README.md)
+### 1. Kaggle Deep Learning Certificate
 - Used TensorFlow and Keras to build and train neural networks for structured data.
 
 ### 2. [BCG X Gen AI Forage Simulation](forage-bcg-x-genai/README.md)
@@ -28,6 +28,8 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 - Completed a simulation focussing on how data science is a critical component of British Airways' success.
 - Scraped and analysed customer review data to uncover findings.
 - Built a predictive model to understand factors that influence buying behaviour.
+
+### 4. [MSU Data Science Project: Predicting and Optimizing the Usage of Bike Sharing Systems]
 
 ## Skills
 
