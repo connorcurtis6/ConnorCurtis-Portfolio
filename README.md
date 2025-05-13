@@ -41,6 +41,7 @@ I'm a Data Science student at Michigan State University passionate about data sc
 
 ### 5. MSU Data Science Project: What is the Magnitude of Magnitude?
 - [Project Code](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/STT%20180%20Honors%20Project.Rmd)
+- [Project Write Up](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/STT180%20Honors%20Option%20(1).pdf)
 - Used R and various packages such as dplyr, tidyverse, infer, broom, and ggplot to explore the relationships between magnitude and other variables present in an earthquake dataset
 - Thoroughly visualized variable relationships to uncover data insights, used linear regression to create a model that can predict magnitude based on other variables (depth, location, etc.), used inference testing to draw concrete conclusions about variable relationships
 
