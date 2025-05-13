@@ -31,15 +31,9 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 
 ## Skills
 
-Programming Languages: Significant experience in Python, as well as experience in R and SQL
-Algorithm Design and Analysis: Experience in developing logic-based algorithms and functions to automate tasks and process data including the logic flow within the GenAI chatbot project
-Machine Learning: Supervised learning (regression, classification), neural networks (CNNs), random forests; model development and evaluation using Python (Scikit-learn, TensorFlow, Keras) to assess accuracy, precision, recall, and validation loss
-Data Manipulation: Experienced in cleaning, wrangling, transforming, and preparing data for analysis and modeling. Skilled in using Python libraries such as Pandas and NumPy for data manipulation tasks.
-Web Scraping: Techniques for extracting data from websites
-Data Visualization: Creating visual insights with tools like Matplotlib and Seaborn
-
-
-- **Programming**: Python, R, SQL
-- **Machine Learning**: Supervised Learning, Neural Networks
-- **Data Visualization**: Matplotlib, Seaborn
-- **Tools**: Kaggle, Jupyter, GitHub, Excel
+- **Programming Languages:** Significant experience in Python, as well as experience in R and SQL
+- **Algorithm Design and Analysis:** Experience in developing logic-based algorithms and functions to automate tasks and process data including the logic flow within the GenAI chatbot project
+- **Machine Learning:** Supervised learning (regression, classification), neural networks (CNNs), random forests; model development and evaluation using Python (Scikit-learn, TensorFlow, Keras) to assess accuracy, precision, recall, and validation loss
+- **Data Manipulation:** Experienced in cleaning, wrangling, transforming, and preparing data for analysis and modeling. Skilled in using Python libraries such as Pandas and NumPy for data manipulation tasks.
+- **Web Scraping:** Techniques for extracting data from websites
+- **Data Visualization:** Creating visual insights with tools like Matplotlib and Seaborn
