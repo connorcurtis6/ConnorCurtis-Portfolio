@@ -17,13 +17,17 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 ## Projects
 
 ### 1. [Kaggle Deep Learning Certificate](kaggle-deep-learning-cert/README.md)
-A hands-on course focusing on the fundamentals of deep learning with TensorFlow.
+Used TensorFlow and Keras to build and train neural networks for structured data.
 
 ### 2. [BCG X Gen AI Forage Simulation](forage-bcg-x-genai/README.md)
-Analyzed data and built AI models to solve business problems during a simulated project at BCG X.
+Completed a job simulation involving AI-powered financial chatbot development for BCG's GenAI Consulting team.
+Gained experience in Python programming, including the use of libraries such as pandas for data manipulation.
+Integrated and interpreted complex financial data from 10-K and 10-Q reports, employing rule-based logic to create a chatbot that provides user-friendly financial insights and analysis.
 
 ### 3. [British Airways Data Analysis Forage Simulation](forage-british-airways/README.md)
-Worked with a team to analyze customer data and derive actionable insights for British Airways.
+Completed a simulation focussing on how data science is a critical component of British Airways' success.
+Scraped and analysed customer review data to uncover findings.
+Built a predictive model to understand factors that influence buying behaviour.
 
 ## Skills
 
