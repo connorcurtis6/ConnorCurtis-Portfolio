@@ -10,7 +10,7 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 
 ## Certifications
 
-- [Kaggle - Deep Learning](kaggle-deep-learning-cert/README.md)
+- [Kaggle - Deep Learning]([kaggle-deep-learning-cert/README.md](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/Kaggle-%20Intro%20to%20Deep%20Learning%20Certificate.png?raw=true))
 - [BCG X Gen AI Forage Simulation](forage-bcg-x-genai/README.md)
 - [British Airways Data Analysis Forage Simulation](forage-british-airways/README.md)
 
