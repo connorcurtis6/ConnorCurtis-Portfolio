@@ -28,6 +28,7 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 
 ### 3. British Airways Data Analysis Forage Simulation Work
 - [Web Scraping and Analysis File](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/Forage%20British%20Airways.ipynb)
+- [Predicting Customer Bookings - Random Forest File](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/British%20Airways%20Machine%20Learning.ipynb)
 - Completed a simulation focussing on how data science is a critical component of British Airways' success.
 - Scraped and analysed customer review data to uncover findings.
 - Built a predictive model to understand factors that influence buying behaviour.
