@@ -26,7 +26,8 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 - Gained experience in Python programming, including the use of libraries such as pandas for data manipulation.
 - Integrated and interpreted complex financial data from 10-K and 10-Q reports, employing rule-based logic to create a chatbot that provides user-friendly financial insights and analysis.
 
-### 3. [British Airways Data Analysis Forage Simulation Work](forage-british-airways/README.md)
+### 3. British Airways Data Analysis Forage Simulation Work
+- [Web Scraping and Analysis File](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/Forage%20British%20Airways.ipynb)
 - Completed a simulation focussing on how data science is a critical component of British Airways' success.
 - Scraped and analysed customer review data to uncover findings.
 - Built a predictive model to understand factors that influence buying behaviour.
