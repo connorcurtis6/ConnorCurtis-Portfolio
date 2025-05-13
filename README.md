@@ -39,6 +39,11 @@ I'm a Data Science student at Michigan State University passionate about data sc
 - Used Python, Pandas, NumPy, Matplotlib, and Seaborn to execute an extremely in depth analysis on bike sharing data from Capital Bikeshare.
 - Applied curve fitting  to data (using a modified sine function), applied descriptive statistics to data, and thoroughly visualized variable relationships to uncover important insights. These insights provided information on how bikeshar companise like this one can optimize their future endeavors.
 
+### 5. MSU Data Science Project: What is the Magnitude of Magnitude?
+- [Project Code](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/STT%20180%20Honors%20Project.Rmd)
+- Used R and various packages such as dplyr, tidyverse, infer, broom, and ggplot to explore the relationships between magnitude and other variables present in an earthquake dataset
+- Thoroughly visualized variable relationships to uncover data insights, used linear regression to create a model that can predict magnitude based on other variables (depth, location, etc.), used inference testing to draw concrete conclusions about variable relationships
+
 
 ## Skills
 
