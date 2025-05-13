@@ -16,7 +16,7 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 
 ## Projects
 
-### 1. Kaggle Deep Learning Certificate
+### 1. Kaggle Deep Learning Course
 - Used TensorFlow and Keras to build and train neural networks for structured data.
 
 ### 2. [BCG X Gen AI Forage Simulation Work](forage-bcg-x-genai/README.md)
