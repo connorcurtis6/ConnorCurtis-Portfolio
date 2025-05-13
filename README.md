@@ -1,21 +1,33 @@
-# Connor Curtis – Data Science & AI Portfolio
+# Connor Curtis - Data Science & AI Portfolio
+
+## About Me
 
 I'm a Data Science student at Michigan State University passionate about AI and real-world problem solving. Here’s a quick look at what I’ve worked on:
 
-## 🔍 Projects
+- **Graduation**: Spring 2028
+- **GPA**: 4.0
+- **LinkedIn**: [Connor Curtis LinkedIn](https://www.linkedin.com/in/connor-curtis-803028364/)
 
-- **BCG X Gen AI Simulation**  
-  Applied generative AI tools to a consulting problem; presented data-driven solutions and learned prompt engineering.
+## Certifications
 
-- **British Airways Data Analysis Simulation**  
-  Analyzed customer satisfaction data, cleaned and visualized data, and provided recommendations.
+- [Kaggle - Deep Learning](kaggle-deep-learning-cert/README.md)
+- [BCG X Gen AI Forage Simulation](forage-bcg-x-genai/README.md)
+- [British Airways Data Analysis Forage Simulation](forage-british-airways/README.md)
 
-- **Kaggle Deep Learning Certification**  
-  Completed projects involving neural networks, computer vision, and TensorFlow basics.
+## Projects
 
-## 📜 Certifications
-- Kaggle: Intro to Deep Learning  
-- [Forage Simulations](https://www.theforage.com/) – BCG X, British Airways
+### 1. [Kaggle Deep Learning Certificate](kaggle-deep-learning-cert/README.md)
+A hands-on course focusing on the fundamentals of deep learning with TensorFlow.
 
-## 📫 Connect with me
-- [LinkedIn](https://www.linkedin.com/in/connor-curtis-803028364/)
+### 2. [BCG X Gen AI Forage Simulation](forage-bcg-x-genai/README.md)
+Analyzed data and built AI models to solve business problems during a simulated project at BCG X.
+
+### 3. [British Airways Data Analysis Forage Simulation](forage-british-airways/README.md)
+Worked with a team to analyze customer data and derive actionable insights for British Airways.
+
+## Skills
+
+- **Programming**: Python, R, SQL
+- **Machine Learning**: Supervised Learning, Neural Networks
+- **Data Visualization**: Matplotlib, Seaborn
+- **Tools**: Kaggle, Jupyter, GitHub, Excel
