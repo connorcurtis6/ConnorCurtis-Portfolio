@@ -2,10 +2,11 @@
 
 ## About Me
 
-I'm a Data Science student at Michigan State University passionate about AI and real-world problem solving. Here’s a quick look at what I’ve worked on:
+I'm a Data Science student at Michigan State University passionate about data science, computer science, AI, and real-world problem solving. Here’s a quick look at what I’ve worked on:
 
 - **Graduation**: Spring 2028
 - **GPA**: 4.0
+- **Major**: Data Science
 - **LinkedIn**: [Connor Curtis LinkedIn](https://www.linkedin.com/in/connor-curtis-803028364/)
 
 ## Certifications
