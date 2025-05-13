@@ -31,7 +31,7 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 - Built a predictive model to understand factors that influence buying behaviour.
 
 ### 4. MSU Data Science Project: Predicting and Optimizing the Usage of Bike Sharing Systems
-- ### [Project File](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/CMSE%20201%20Project.ipynb)
+- [Project File](https://github.com/connorcurtis6/ConnorCurtis-Portfolio/blob/main/CMSE%20201%20Project.ipynb)
 - Used Python, Pandas, NumPy, Matplotlib, and Seaborn to execute an extremely in depth analysis on bike sharing data from Capital Bikeshare.
 - Applied curve fitting  to data (using a modified sine function), applied descriptive statistics to data, and thoroughly visualized variable relationships to uncover important insights. These insights provided information on how bikeshar companise like this one can optimize their future endeavors.
 
