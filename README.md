@@ -17,19 +17,27 @@ I'm a Data Science student at Michigan State University passionate about AI and 
 ## Projects
 
 ### 1. [Kaggle Deep Learning Certificate](kaggle-deep-learning-cert/README.md)
-Used TensorFlow and Keras to build and train neural networks for structured data.
+- Used TensorFlow and Keras to build and train neural networks for structured data.
 
 ### 2. [BCG X Gen AI Forage Simulation](forage-bcg-x-genai/README.md)
-Completed a job simulation involving AI-powered financial chatbot development for BCG's GenAI Consulting team.
-Gained experience in Python programming, including the use of libraries such as pandas for data manipulation.
-Integrated and interpreted complex financial data from 10-K and 10-Q reports, employing rule-based logic to create a chatbot that provides user-friendly financial insights and analysis.
+- Completed a job simulation involving AI-powered financial chatbot development for BCG's GenAI Consulting team.
+- Gained experience in Python programming, including the use of libraries such as pandas for data manipulation.
+- Integrated and interpreted complex financial data from 10-K and 10-Q reports, employing rule-based logic to create a chatbot that provides user-friendly financial insights and analysis.
 
 ### 3. [British Airways Data Analysis Forage Simulation](forage-british-airways/README.md)
-Completed a simulation focussing on how data science is a critical component of British Airways' success.
-Scraped and analysed customer review data to uncover findings.
-Built a predictive model to understand factors that influence buying behaviour.
+- Completed a simulation focussing on how data science is a critical component of British Airways' success.
+- Scraped and analysed customer review data to uncover findings.
+- Built a predictive model to understand factors that influence buying behaviour.
 
 ## Skills
+
+Programming Languages: Significant experience in Python, as well as experience in R and SQL
+Algorithm Design and Analysis: Experience in developing logic-based algorithms and functions to automate tasks and process data including the logic flow within the GenAI chatbot project
+Machine Learning: Supervised learning (regression, classification), neural networks (CNNs), random forests; model development and evaluation using Python (Scikit-learn, TensorFlow, Keras) to assess accuracy, precision, recall, and validation loss
+Data Manipulation: Experienced in cleaning, wrangling, transforming, and preparing data for analysis and modeling. Skilled in using Python libraries such as Pandas and NumPy for data manipulation tasks.
+Web Scraping: Techniques for extracting data from websites
+Data Visualization: Creating visual insights with tools like Matplotlib and Seaborn
+
 
 - **Programming**: Python, R, SQL
 - **Machine Learning**: Supervised Learning, Neural Networks
